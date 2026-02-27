@@ -1,0 +1,13 @@
+$green-main: #2E7D32;
+$green-light: #81C784;
+$beige-bg: #F1F8E9;
+$orange-accent: #F57C00;
+$gray-text: #333333;
+$white: #ffffff;
+
+body {
+  background-color: $beige-bg;
+  color: $gray-text;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
