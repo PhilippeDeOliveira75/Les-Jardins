@@ -1,4 +1,5 @@
 import './home.scss';
+import { Champ } from '@assets/import'
 
 import ProductCard from '@components/ProductCard/productCard';
 
@@ -24,7 +25,6 @@ export default function Home() {
   return (
     <main className="home">
 
-      {/* Hero */}
       <section className="home__hero">
         <div className="home__hero-content">
           <h1>🥕 Bienvenue au Potager de Moselle</h1>
@@ -33,7 +33,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Produits / Légumes */}
       <section className="home__products" id="products">
         <h2>Nos légumes de saison</h2>
         <div className="home__products-grid">
@@ -43,7 +42,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* À propos */}
       <section className="home__about">
         <div className="home__about-content">
           <div className="home__about-text">
@@ -54,7 +52,7 @@ export default function Home() {
             </p>
           </div>
           <div className="home__about-image">
-            <img src="/assets/ferme.jpg" alt="Ferme" />
+            <img src={ Champ } alt="Champ couché de soleil" />
           </div>
         </div>
       </section>
