@@ -3,42 +3,63 @@
 .home {
 
   &__hero {
-    background-color: $green-light;
-    color: $white;
-    padding: 6rem 2rem;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  color: $white;
+  padding: 6rem 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 
-    &-content {
-      max-width: 700px;
+  &-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
 
-      h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-      }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 2;
+  }
 
-      p {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-      }
+  &-content {
+    position: relative;
+    z-index: 3;
+    max-width: 700px;
 
-      .btn-primary {
-        background-color: $orange-accent;
-        color: $white;
-        padding: 0.8rem 2rem;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: background 0.3s;
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
 
-        &:hover {
-          background-color: darken($orange-accent, 10%);
-        }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-primary {
+      background-color: $orange-accent;
+      color: $white;
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+
+      &:hover {
+        background-color: darken($orange-accent, 10%);
       }
     }
   }
+}
 
   &__products {
     padding: 4rem 2rem;

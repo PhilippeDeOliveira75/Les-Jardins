@@ -1,5 +1,6 @@
 import './home.scss';
-import { Champ } from '@assets/import'
+import { Champ, ChampNeige } from '@assets/import'
+
 
 import ProductCard from '@components/ProductCard/productCard';
 
@@ -25,13 +26,15 @@ export default function Home() {
   return (
     <main className="home">
 
-      <section className="home__hero">
-        <div className="home__hero-content">
-          <h1>🥕 Bienvenue au Potager de Moselle</h1>
-          <p>Légumes frais directement du producteur à votre assiette à Metz</p>
-          <a href="#products" className="btn-primary">Voir nos légumes</a>
-        </div>
-      </section>
+<section className="home__hero">
+  <img src={ChampNeige} alt="Potager" className="home__hero-bg" />
+
+  <div className="home__hero-content">
+    <h1>🥕 Bienvenue au Potager de Moselle</h1>
+    <p>Légumes frais directement du producteur à votre assiette à Metz</p>
+    <a href="#products" className="btn-primary">Voir nos légumes</a>
+  </div>
+</section>
 
       <section className="home__products" id="products">
         <h2>Nos légumes de saison</h2>
