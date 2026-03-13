@@ -5,6 +5,14 @@ $orange-accent: #F57C00;
 $gray-text: #333333;
 $white: #ffffff;
 
+@font-face {
+  font-family: 'Patrick Hand';
+  src: url('/src/assets/fonts/PatrickHand-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   background-color: $beige-bg;
   color: $gray-text;

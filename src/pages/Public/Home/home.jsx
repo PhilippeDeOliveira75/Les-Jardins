@@ -1,56 +1,44 @@
 import './home.scss';
-import { Champ, ChampNeige } from '@assets/import'
+import { ChampNeige } from '@assets/import';
+import { AboutUs, ProductCard }  from '@components/import';
 
-
-import ProductCard from '@components/ProductCard/productCard';
 
 const products = [
-  { name: "Carottes", image: "/assets/carottes.jpg" },
-  { name: "Tomates", image: "/assets/tomates.jpg" },
+  { name: "Carottes",   image: "/assets/carottes.jpg"   },
+  { name: "Tomates",    image: "/assets/tomates.jpg"    },
   { name: "Courgettes", image: "/assets/courgettes.jpg" },
-  { name: "Poivrons", image: "/assets/poivrons.jpg" },
+  { name: "Poivrons",   image: "/assets/poivrons.jpg"   },
 ];
 
 const services = [
-  { title: "Légumes Bio", description: "Cultivés sans pesticides, 100% naturels." },
-  { title: "Livraison Locale", description: "Directement du producteur à Metz." },
-  { title: "Saison et Fraîcheur", description: "Toujours des légumes de saison." },
+  { title: "Légumes Bio",       description: "Cultivés sans pesticides, 100% naturels."       },
+  { title: "Livraison Locale",  description: "Directement du producteur à Metz."              },
+  { title: "Saison et Fraîcheur", description: "Toujours des légumes de saison."              },
 ];
 
 const testimonials = [
   { name: "Alice", message: "Les légumes sont incroyablement frais et délicieux !" },
-  { name: "Marc", message: "Service rapide et légumes de qualité supérieure." },
+  { name: "Marc",  message: "Service rapide et légumes de qualité supérieure."     },
 ];
 
 export default function Home() {
   return (
     <main className="home">
 
-<section className="home__hero">
-  <img src={ChampNeige} alt="Potager" className="home__hero-bg" />
-
-  <div className="home__hero-content">
-    <h1>🥕 Bienvenue au Potager de Moselle</h1>
-    <p>Légumes frais directement du producteur à votre assiette à Metz</p>
-    <a href="#products" className="btn-primary">Voir nos légumes</a>
-  </div>
-</section>
-
-      <section className="home__about">
-        <div className="home__about-content">
-          <div className="home__about-text">
-            <h2>À propos de nous</h2>
-            <p>
-              Les Jardins du Val de Moselle font pousser des légumes depuis six générations, avec le même attachement au goût et à la fraîcheur. À Metz et La Maxe, nous produisons sur 15 hectares en agriculture biologique, en privilégiant des pratiques qui préservent les sols, la biodiversité et l’environnement, tout en offrant une large une production au fil des saisons, des légumes croquants aux tomates bien mûres, sans oublier les fraises fraîchement cueillies.
-Aujourd’hui pilotée par Sébastien Obriot, l’exploitation continue d’avancer avec l’envie de proposer aux Messins de bons fruits et légumes sains, locaux et frais, cultivés dans le respect de l’environnement, du champ à l’assiette !
-            </p>
-          </div>
-          <div className="home__about-image">
-            <img src={ Champ } alt="Champ couché de soleil" />
-          </div>
+      {/* Hero */}
+      <section className="home__hero">
+        <img src={ChampNeige} alt="Potager" className="home__hero-bg" />
+        <div className="home__hero-content">
+          <h1>Bienvenue au Potager de Moselle</h1>
+          <p>Légumes frais directement du producteur à votre assiette à Metz</p>
+          <a href="#products" className="btn-primary">Voir nos légumes</a>
         </div>
       </section>
 
+      {/* À propos */}
+      <AboutUs />
+
+      {/* Produits */}
       <section className="home__products" id="products">
         <h2>Nos légumes de saison</h2>
         <div className="home__products-grid">
@@ -59,8 +47,6 @@ Aujourd’hui pilotée par Sébastien Obriot, l’exploitation continue d’avan
           ))}
         </div>
       </section>
-
-
 
       {/* Services */}
       <section className="home__services">
@@ -88,7 +74,7 @@ Aujourd’hui pilotée par Sébastien Obriot, l’exploitation continue d’avan
         </div>
       </section>
 
-      {/* Contact rapide */}
+      {/* Contact */}
       <section className="home__contact" id="contact">
         <h2>Contactez-nous</h2>
         <p>Adresse, téléphone, email ou formulaire ici</p>

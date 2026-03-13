@@ -1,0 +1,39 @@
+@import '@/App.scss';
+
+.about {
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &__text {
+    width: 35%;
+
+    h2 {
+      font-size: 2rem;
+      color: $green-main;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+  }
+
+  &__image {
+    img {
+      width: 600px;
+      border-radius: 12px;
+    }
+  }
+}

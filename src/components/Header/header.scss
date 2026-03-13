@@ -4,17 +4,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 16px;
+  padding: 15px 30px;
   background-color: $white;
   color: $green-main;
 
   &__logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 30px;
 
     h1 {
-      font-size: 1.2rem;
+      font-family: 'Patrick Hand';
+      font-size: 28px;
       margin: 0;
     }
 
@@ -26,7 +27,7 @@
 
   &__nav {
     display: flex;
-    gap: 2rem;
+    gap: 30px;
 
     a {
       color: $green-main;
