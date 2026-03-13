@@ -1,6 +1,6 @@
 import './header.scss'
 
-import { LogoJardins } from '@assets/import'
+import { Logo } from '@assets/import'
 
 function Header() {
 
@@ -8,7 +8,7 @@ function Header() {
 
     <header className="header">
       <div className="header__logo">
-        <img src={ LogoJardins } alt='logo jardins du val de moselle'/>
+        <img src={ Logo} alt='logo jardins du val de moselle'/>
         <h1>Les Jardins du Val de Moselle</h1>
       </div>
 

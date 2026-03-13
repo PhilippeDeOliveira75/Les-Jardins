@@ -36,15 +36,6 @@ export default function Home() {
   </div>
 </section>
 
-      <section className="home__products" id="products">
-        <h2>Nos légumes de saison</h2>
-        <div className="home__products-grid">
-          {products.map((p) => (
-            <ProductCard key={p.name} product={p} />
-          ))}
-        </div>
-      </section>
-
       <section className="home__about">
         <div className="home__about-content">
           <div className="home__about-text">
@@ -59,6 +50,17 @@ Aujourd’hui pilotée par Sébastien Obriot, l’exploitation continue d’avan
           </div>
         </div>
       </section>
+
+      <section className="home__products" id="products">
+        <h2>Nos légumes de saison</h2>
+        <div className="home__products-grid">
+          {products.map((p) => (
+            <ProductCard key={p.name} product={p} />
+          ))}
+        </div>
+      </section>
+
+
 
       {/* Services */}
       <section className="home__services">
