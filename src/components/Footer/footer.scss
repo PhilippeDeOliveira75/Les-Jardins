@@ -3,19 +3,11 @@
 .footer {
   background-color: $green-main;
   color: $white;
-  padding: 1.5rem 1rem;
+  padding: 24px 16px;
   text-align: center;
 
   p {
-    margin: 0.3rem 0;
-    font-size: 0.9rem;
-    color: $white;
-  }
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .footer {
-    font-size: 0.85rem;
+    margin: 5px 0;
+    font-size: 14px;
   }
 }

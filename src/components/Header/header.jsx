@@ -8,10 +8,9 @@ function Header() {
 
     <header className="header">
       <div className="header__logo">
-        <img src={ Logo} alt='logo jardins du val de moselle'/>
+        <img src={Logo} alt="logo jardins du val de moselle" />
         <h1>Les Jardins du Val de Moselle</h1>
       </div>
-
       <nav className="header__nav">
         <a href="#accueil">Accueil</a>
         <a href="#recettes">Recettes</a>
@@ -21,6 +20,7 @@ function Header() {
     </header>
     
   )
+
 }
 
 export default Header

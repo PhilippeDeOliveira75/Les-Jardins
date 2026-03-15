@@ -19,20 +19,19 @@
   }
 
   &__info {
-    padding: 1rem;
+    padding: 16px;
     text-align: center;
 
     h3 {
       margin: 0;
-      font-size: 1.2rem;
+      font-size: 19px;
       color: $green-main;
     }
   }
-}
 
-/* Responsive */
-@media (max-width: 600px) {
-  .product-card__image {
-    height: 150px;
+  @media (max-width: 600px) {
+    &__image {
+      height: 150px;
+    }
   }
 }

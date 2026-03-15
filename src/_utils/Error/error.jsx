@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
 import './error.scss'
+
+import { Link } from 'react-router-dom'
 
 function Error () {
 

@@ -1,33 +1,27 @@
 import './home.scss';
-import { ChampNeige } from '@assets/import';
-import { AboutUs, ProductCard }  from '@components/import';
-
+import { Champ } from '@assets/import';
+import { AboutUs, ProductCard } from '@components/import';
 
 const products = [
-  { name: "Carottes",   image: "/assets/carottes.jpg"   },
-  { name: "Tomates",    image: "/assets/tomates.jpg"    },
-  { name: "Courgettes", image: "/assets/courgettes.jpg" },
-  { name: "Poivrons",   image: "/assets/poivrons.jpg"   },
+  { name: "Carottes",    image: "/assets/carottes.jpg"   },
+  { name: "Tomates",     image: "/assets/tomates.jpg"    },
+  { name: "Courgettes",  image: "/assets/courgettes.jpg" },
+  { name: "Poivrons",    image: "/assets/poivrons.jpg"   },
 ];
 
 const services = [
-  { title: "Légumes Bio",       description: "Cultivés sans pesticides, 100% naturels."       },
-  { title: "Livraison Locale",  description: "Directement du producteur à Metz."              },
-  { title: "Saison et Fraîcheur", description: "Toujours des légumes de saison."              },
+  { title: "Légumes Bio",         description: "Cultivés sans pesticides, 100% naturels."  },
+  { title: "Livraison Locale",    description: "Directement du producteur à Metz."         },
+  { title: "Saison et Fraîcheur", description: "Toujours des légumes de saison."           },
 ];
 
-const testimonials = [
-  { name: "Alice", message: "Les légumes sont incroyablement frais et délicieux !" },
-  { name: "Marc",  message: "Service rapide et légumes de qualité supérieure."     },
-];
-
-export default function Home() {
+function Home() {
   return (
     <main className="home">
 
       {/* Hero */}
       <section className="home__hero">
-        <img src={ChampNeige} alt="Potager" className="home__hero-bg" />
+        <img src={Champ} alt="Potager" className="home__hero-bg" />
         <div className="home__hero-content">
           <h1>Bienvenue au Potager de Moselle</h1>
           <p>Légumes frais directement du producteur à votre assiette à Metz</p>
@@ -61,19 +55,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Témoignages */}
-      <section className="home__testimonials">
-        <h2>Ce que disent nos clients</h2>
-        <div className="home__testimonials-grid">
-          {testimonials.map((t, i) => (
-            <div key={i} className="testimonial-card">
-              <p>"{t.message}"</p>
-              <span>- {t.name}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Contact */}
       <section className="home__contact" id="contact">
         <h2>Contactez-nous</h2>
@@ -84,3 +65,5 @@ export default function Home() {
     </main>
   );
 }
+
+export default Home
