@@ -7,7 +7,6 @@ function AboutUs() {
       <div className="about__content">
         <div className="about__text">
           <h2>À propos de nous</h2>
-          <p>
             <p>
                 Depuis six générations, nous cultivons la terre avec passion au cœur de la Moselle.
                 Sur 15 hectares en agriculture biologique à Metz et La Maxe, nos fruits et légumes
@@ -15,7 +14,6 @@ function AboutUs() {
                 de saison. Une seule promesse : vous offrir le meilleur du terroir local,
                 directement du champ à votre assiette.
             </p>
-          </p>
         </div>
         <div className="about__image">
           <img src={Team} alt="L'équipe des Jardins du Val de Moselle" />

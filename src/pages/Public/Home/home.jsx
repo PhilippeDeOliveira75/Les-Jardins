@@ -22,7 +22,7 @@ function Home() {
       {/* Hero */}
       <section className="home__hero">
         <img src={Champ} alt="Potager" className="home__hero-bg" />
-        <div className="home__hero-content">
+        /<div className="home__hero-content">
           <h1>Bienvenue au Potager de Moselle</h1>
           <p>Légumes frais directement du producteur à votre assiette à Metz</p>
           <a href="#products" className="btn-primary">Voir nos légumes</a>
