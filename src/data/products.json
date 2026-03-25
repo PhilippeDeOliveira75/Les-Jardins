@@ -1,0 +1,13 @@
+{
+  "featuredProducts": [
+    { "name": "Tomates",      "image": "Tomates",     "season": "Juin à octobre"    },
+    { "name": "Salade",       "image": "Salade",      "season": "Avril à novembre"  },
+    { "name": "Fraises",      "image": "Fraises",     "season": "Mai à juillet"     },
+    { "name": "Butternut",    "image": "Butternut",   "season": "Septembre à janvier" },
+    { "name": "Haricots",     "image": "Haricots",    "season": "Juillet à octobre" },
+    { "name": "Radis",        "image": "Radis",       "season": "Mars à novembre"   },
+    { "name": "Carottes",     "image": "Carottes",    "season": "Juin à décembre"   },
+    { "name": "Patate douce", "image": "PatateDouce", "season": "Octobre à janvier" }
+  ],
+  "products": []
+}

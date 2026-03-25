@@ -1,19 +1,10 @@
 import './home.scss';
 import { Champ } from '@assets/import';
 import { AboutUs, ProductCard } from '@components/import';
+import * as images from '@assets/import';
+import productsData from '@data/products.json';
 
-const products = [
-  { name: "Carottes",    image: "/assets/carottes.jpg"   },
-  { name: "Tomates",     image: "/assets/tomates.jpg"    },
-  { name: "Courgettes",  image: "/assets/courgettes.jpg" },
-  { name: "Poivrons",    image: "/assets/poivrons.jpg"   },
-];
-
-const services = [
-  { title: "Légumes Bio",         description: "Cultivés sans pesticides, 100% naturels."  },
-  { title: "Livraison Locale",    description: "Directement du producteur à Metz."         },
-  { title: "Saison et Fraîcheur", description: "Toujours des légumes de saison."           },
-];
+const { featuredProducts } = productsData;
 
 function Home() {
   return (
@@ -22,7 +13,7 @@ function Home() {
       {/* Hero */}
       <section className="home__hero">
         <img src={Champ} alt="Potager" className="home__hero-bg" />
-        /<div className="home__hero-content">
+        <div className="home__hero-content">
           <h1>Bienvenue au Potager de Moselle</h1>
           <p>Légumes frais directement du producteur à votre assiette à Metz</p>
           <a href="#products" className="btn-primary">Voir nos légumes</a>
@@ -32,25 +23,12 @@ function Home() {
       {/* À propos */}
       <AboutUs />
 
-      {/* Produits */}
+      {/* Produits phares */}
       <section className="home__products" id="products">
         <h2>Nos légumes de saison</h2>
         <div className="home__products-grid">
-          {products.map((p) => (
-            <ProductCard key={p.name} product={p} />
-          ))}
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="home__services">
-        <h2>Nos avantages</h2>
-        <div className="home__services-grid">
-          {services.map((s) => (
-            <div key={s.title} className="service-card">
-              <h3>{s.title}</h3>
-              <p>{s.description}</p>
-            </div>
+          {featuredProducts.map((p) => (
+            <ProductCard key={p.name} product={{ ...p, image: images[p.image] }} />
           ))}
         </div>
       </section>
@@ -66,4 +44,4 @@ function Home() {
   );
 }
 
-export default Home
+export default Home;

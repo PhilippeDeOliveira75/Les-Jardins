@@ -28,6 +28,10 @@ export default defineConfig({
         replacement: path.resolve(__dirname, 'src/components')
       },
       {
+        find: '@data',
+        replacement: path.resolve(__dirname, 'src/data')
+      },
+      {
         find: '@pages',
         replacement: path.resolve(__dirname, 'src/pages')
       },
