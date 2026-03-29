@@ -1,37 +1,80 @@
 @import '@/App.scss';
 
+// ─── Badges saison ───────────────────────────────────────────────
+$season-spring:  #a8d5a2;
+$season-summer:  #f6c05c;
+$season-autumn:  #e8925a;
+$season-winter:  #89b4cc;
+
 .product-card {
   background-color: $white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+
+    .product-card__image {
+      transform: scale(1.05);
+    }
+  }
+
+  // ── Image avec badge superposé ──────────────────────────────────
+  &__image-wrapper {
+    position: relative;
+    overflow: hidden;
   }
 
   &__image {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+
+    @media (max-width: 600px) {
+      height: 150px;
+    }
   }
 
+  // Badge saison en bas de l'image
+  &__badge {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.03em;
+    color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+
+    &--spring { background-color: $season-spring; }
+    &--summer { background-color: $season-summer; }
+    &--autumn { background-color: $season-autumn; }
+    &--winter { background-color: $season-winter; }
+  }
+
+  // ── Infos ────────────────────────────────────────────────────────
   &__info {
     padding: 16px;
     text-align: center;
-
-    h3 {
-      margin: 0;
-      font-size: 19px;
-      color: $green-main;
-    }
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  @media (max-width: 600px) {
-    &__image {
-      height: 150px;
-    }
+  &__name {
+    margin: 0;
+    font-size: 18px;
+    color: $green-main;
+    font-weight: 700;
   }
 }

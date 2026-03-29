@@ -1,6 +1,6 @@
 import './home.scss';
 import { Champ } from '@assets/import';
-import { AboutUs, ProductCard } from '@components/import';
+import { AboutUs, ProductCard, Contact } from '@components/import';
 import * as images from '@assets/import';
 import productsData from '@data/products.json';
 
@@ -24,21 +24,10 @@ function Home() {
       <AboutUs />
 
       {/* Produits phares */}
-      <section className="home__products" id="products">
-        <h2>Nos légumes de saison</h2>
-        <div className="home__products-grid">
-          {featuredProducts.map((p) => (
-            <ProductCard key={p.name} product={{ ...p, image: images[p.image] }} />
-          ))}
-        </div>
-      </section>
+
 
       {/* Contact */}
-      <section className="home__contact" id="contact">
-        <h2>Contactez-nous</h2>
-        <p>Adresse, téléphone, email ou formulaire ici</p>
-        <a href="#contact-form" className="btn-primary">Nous contacter</a>
-      </section>
+          <Contact />
 
     </main>
   );

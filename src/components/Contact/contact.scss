@@ -1,0 +1,208 @@
+@import '@/App.scss';
+
+$card-radius: 14px;
+$card-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+$transition: 0.25s ease;
+
+.contact {
+
+  text-align: center;
+
+  &__title {
+    font-size: 32px;
+    margin-bottom: 32px;
+    color: $green-main;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // ── Carte Google Maps ───────────────────────────────────────────
+  &__map-wrapper {
+    border-radius: $card-radius;
+    overflow: hidden;
+    box-shadow: $card-shadow;
+    position: relative;
+    min-height: 380px;
+
+    @media (max-width: 900px) {
+      min-height: 280px;
+    }
+  }
+
+  &__map-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+
+    &:hover .contact__map-overlay {
+      opacity: 1;
+    }
+  }
+
+  &__map-iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    border: none;
+    display: block;
+    pointer-events: none; // le clic passe sur le <a> parent
+
+    @media (max-width: 900px) {
+      min-height: 280px;
+    }
+  }
+
+  // Overlay "Lancer l'itinéraire" au survol
+  &__map-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(darken($green-main, 10%), 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity $transition;
+    border-radius: $card-radius;
+  }
+
+  &__map-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: $orange-accent;
+    color: $white;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 50px;
+    letter-spacing: 0.03em;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: background $transition, transform $transition;
+
+    &:hover {
+      background-color: darken($orange-accent, 8%);
+      transform: scale(1.04);
+    }
+  }
+
+  // ── Colonne infos ───────────────────────────────────────────────
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  // ── Carte info individuelle ─────────────────────────────────────
+  &__card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: $white;
+    border-radius: $card-radius;
+    padding: 20px 24px;
+    box-shadow: $card-shadow;
+    transition: transform $transition, box-shadow $transition;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+    }
+
+    &--hours {
+      align-items: flex-start;
+    }
+  }
+
+  &__card-icon {
+    font-size: 24px;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  &__card-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $green-main;
+    margin: 0 0 6px;
+  }
+
+  &__card-text {
+    font-size: 15px;
+    color: $gray-text;
+    margin: 0;
+    line-height: 1.5;
+    display: block;
+  }
+
+  &__card-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: $orange-accent;
+    text-decoration: none;
+    transition: color $transition;
+
+    &:hover {
+      color: darken($orange-accent, 12%);
+    }
+  }
+
+  // ── Horaires ────────────────────────────────────────────────────
+  &__hours-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__hours-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding-bottom: 8px;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  &__hours-day {
+    color: $gray-text;
+  }
+
+  &__hours-time {
+    font-weight: 600;
+    color: $green-main;
+  }
+
+  // ── Responsive mobile ───────────────────────────────────────────
+  @media (max-width: 480px) {
+    padding: 56px 16px;
+
+    &__title {
+      font-size: 28px;
+    }
+  }
+}
