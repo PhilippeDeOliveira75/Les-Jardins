@@ -70,14 +70,6 @@ function Contact() {
             <div>
               <h3 className="contact__card-title">Adresse</h3>
               <p className="contact__card-text">{CONTACT_INFO.address}</p>
-              <a
-                href={mapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact__card-link"
-              >
-                Voir sur Maps →
-              </a>
             </div>
           </div>
 
@@ -106,7 +98,7 @@ function Contact() {
           {/* Horaires */}
           <div className="contact__card contact__card--hours">
             <div className="contact__card-icon">🕐</div>
-            <div>
+            <div className="contact__card-wrapper">
               <h3 className="contact__card-title">Horaires d'ouverture</h3>
               <ul className="contact__hours-list">
                 {CONTACT_INFO.hours.map(({ day, time }) => (
