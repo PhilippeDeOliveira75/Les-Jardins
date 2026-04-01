@@ -1,216 +1,137 @@
 @import '@/App.scss';
 
-$card-radius: 14px;
-$card-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
-$transition: 0.25s ease;
-
 .contact {
-
-  padding: 64px 32px;
+  padding: 0px 30px;
   text-align: center;
 
   &__title {
     color: $green-main;
+    margin-bottom: 32px;
   }
 
-  &__body {
+  &__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: auto;
     text-align: left;
+    align-items: stretch;
 
     @media (max-width: 900px) {
       grid-template-columns: 1fr;
     }
   }
 
-  // ── Carte Google Maps ───────────────────────────────────────────
-  &__map-wrapper {
-    border-radius: $card-radius;
+  &__map {
+    position: relative;
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: $card-shadow;
-    position: relative;
-    min-height: 380px;
-
-    @media (max-width: 900px) {
-      min-height: 280px;
-    }
-  }
-
-  &__map-link {
-    display: block;
-    width: 100%;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
     height: 100%;
-    position: relative;
-    cursor: pointer;
+    min-height: 320px;
+    display: block;
 
-    &:hover .contact__map-overlay {
+    &:hover .contact__overlay {
       opacity: 1;
     }
   }
 
-  &__map-iframe {
+  &__map-img {
     width: 100%;
     height: 100%;
-    min-height: 380px;
-    border: none;
+    object-fit: cover;
     display: block;
-    pointer-events: none; // le clic passe sur le <a> parent
-
-    @media (max-width: 900px) {
-      min-height: 280px;
-    }
   }
 
-  // Overlay "Lancer l'itinéraire" au survol
-  &__map-overlay {
+  &__overlay {
     position: absolute;
     inset: 0;
-    background: rgba(darken($green-main, 10%), 0.55);
     display: flex;
     align-items: center;
     justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
     opacity: 0;
-    transition: opacity $transition;
-    border-radius: $card-radius;
-  }
+    transition: 0.25s;
 
-  &__map-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background-color: $orange-accent;
-    color: $white;
-    font-size: 15px;
-    font-weight: 700;
-    padding: 14px 28px;
-    border-radius: 50px;
-    letter-spacing: 0.03em;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    transition: background $transition, transform $transition;
-
-    &:hover {
-      background-color: darken($orange-accent, 8%);
-      transform: scale(1.04);
+    span {
+      background: $orange-accent;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 600;
     }
   }
 
-  // ── Colonne infos ───────────────────────────────────────────────
-  &__info {
+  &__details {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
 
-  // ── Carte info individuelle ─────────────────────────────────────
   &__card {
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    background: $white;
-    border-radius: $card-radius;
-    padding: 20px 24px;
-    box-shadow: $card-shadow;
-    transition: transform $transition, box-shadow $transition;
-
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
-    }
-
-    &--hours {
-      align-items: flex-start;
-    }
+    gap: 14px;
+    padding: 18px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
   }
 
-  &__card-icon {
-    line-height: 1;
-    flex-shrink: 0;
-    margin-top: 2px;
+  &__icon {
+    font-size: 18px;
   }
 
-  &__card-wrapper {
-    width: 100%;
+  &__content {
+    flex: 1;
 
-
-  &__card-title {
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: $green-main;
-    margin: 0 0 6px;
-  }
-
-  &__card-text {
-    font-size: 15px;
-    color: $gray-text;
-    margin: 0;
-    line-height: 1.5;
-    display: block;
-  }
-
-  &__card-link {
-    display: inline-block;
-    margin-top: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    color: $orange-accent;
-    text-decoration: none;
-    transition: color $transition;
-
-    &:hover {
-      color: darken($orange-accent, 12%);
+    h3 {
+      margin: 0 0 6px;
+      font-size: 20px;
+      text-transform: uppercase;
+      color: $green-main;
     }
   }
+
+  &__text {
+    a {
+      color: $orange-accent;
+      font-weight: 600;
+      text-decoration: none;
+    }
   }
 
-  // ── Horaires ────────────────────────────────────────────────────
-&__hours-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
-}
+  &__hours {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
 
+      li {
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        padding: 6px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
-&__hours-item {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  font-size: 14px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  padding-bottom: 8px;
-  width: 100%;
+        span:first-child {
+          color: $orange-accent;
+          font-weight: 600;
+        }
 
-  &:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+        span:last-child {
+          color: $green-main;
+          font-weight: 600;
+        }
+
+        &:last-child {
+          border: none;
+        }
+      }
+    }
   }
-}
 
-&__hours-day {
-  color: $gray-text;
-  flex: 1;
-}
-
-&__hours-time {
-  font-weight: 600;
-  color: $green-main;
-  flex: 1;
-  text-align: right;
-}
-
-  // ── Responsive mobile ───────────────────────────────────────────
   @media (max-width: 480px) {
-    padding: 56px 16px;
-
-    &__title {
-      font-size: 28px;
-    }
+    padding: 48px 16px;
   }
 }

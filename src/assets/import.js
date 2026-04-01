@@ -1,6 +1,8 @@
 export { default as Logo }       from '@assets/images/logo.avif';
 export { default as Team }       from '@assets/images/team.webp';
 export { default as Champ }      from '@assets/images/champ.avif';
+export { default as Map }        from '@assets/images/map.avif';
+
 
 export { default as Tomates }     from '@assets/images/product/tomates.avif';
 export { default as Salade }      from '@assets/images/product/salade.avif';

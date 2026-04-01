@@ -8,26 +8,25 @@ export default function FeaturedProducts() {
 
   return (
 
-    <section className="home__products" id="products">
-      <h2>Nos légumes de saisons</h2>
-      <div className="home__products-grid">
-        {featuredProducts.map((p) => {
-          const img = images[p.image];
-          return (
-            <div key={p.name} className="product-card">
-              <div className="product-card__image-wrapper">
-                <img src={img} alt={p.name} className="product-card__image" />
-                <span className="product-card__badge">🗓 {p.season}</span>
-              </div>
-              <div className="product-card__info">
-                <h3 className="product-card__name">{p.name}</h3>
-              </div>
+    <section className="featured" id="products">
+
+      <h2 className="featured__title">Nos légumes de saisons</h2>
+      
+      <div className="featured__grid">
+        {featuredProducts.map((p) => (
+          <div key={p.name} className="featured__card">
+            <div className="featured__card-visual">
+              <img src={images[p.image]} alt={p.name} className="featured__card-img" />
+              <span className="featured__card-badge">🗓 {p.season}</span>
             </div>
-          );
-        })}
+            <div className="featured__card-body">
+              <h3 className="featured__card-name">{p.name}</h3>
+            </div>
+          </div>
+        ))}
       </div>
+
     </section>
 
   );
-  
 }
